@@ -37,7 +37,15 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
-app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
+// Serve static files with proper headers for frontend access
+app.use("/uploads", express.static(path.join(process.cwd(), "uploads"), {
+  setHeaders: (res, path) => {
+    res.set({
+      'Cache-Control': 'public, max-age=86400', // 24 hours
+      'Access-Control-Allow-Origin': '*'
+    });
+  }
+}));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
@@ -45,7 +53,6 @@ app.use("/api/waste", waste);
 app.use("/api/admin", adminRoutes);
 app.use("/api/locations", locationRoutes);
 app.use("/api/chatbot", chatbotRoutes);
-app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 applyAssociations();
 
