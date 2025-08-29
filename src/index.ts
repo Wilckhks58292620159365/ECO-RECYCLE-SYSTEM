@@ -27,7 +27,15 @@ const app = express();
 const PORT = parseInt(process.env.PORT || "5000", 10);
 
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({
+  origin: [
+    "http://localhost:3000", 
+    "https://6a219693-0c08-4ef4-b60e-64edf6c36ccf-00-eowbgda4dhfc.riker.replit.dev"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
 app.use(express.json());
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
