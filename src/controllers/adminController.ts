@@ -35,40 +35,6 @@ export const toggleUserStatus = async (req: Request, res: Response) => {
   res.json({ message: "User status updated", user });
 };
 
-// export const getAllPickups = async (req: Request, res: Response) => {
-//   try {
-//     const pickups = await Pickup.findAll({
-//       attributes: [
-//         "id",
-//         ["type", "wasteType"],        // alias للـ type
-//         ["quantity", "weight"],       // alias للـ quantity
-//         ["date", "createdAt"],        // alias للـ date
-//         "status",
-//         "points",
-//         ["image", "image"],           // خليه زي ما هو
-//       ],
-//       include: [
-//         {
-//           model: User,
-//           as: "user",
-//           attributes: ["id", "firstName", "lastName", "email"],
-//         },
-//       ],
-//     });
-
-//     const pickupsWithUrls = pickups.map(p => ({
-//       ...p.toJSON(),
-//       imageUrl: p.image
-//         ? `http://localhost:5000/uploads/images/${p.image}`
-//         : null,
-//     }));
-
-//     res.json(pickupsWithUrls);
-//   } catch (error) {
-//     console.error("Error in getAllPickups:", error);
-//     res.status(500).json({ error: "Failed to fetch pickups" });
-//   }
-// };
 export const getAllPickups = async (req: Request, res: Response) => {
   try {
     const rows = await Pickup.findAll({
