@@ -30,7 +30,8 @@ const PORT = parseInt(process.env.PORT || "5000", 10);
 app.use(cors({
   origin: [
     "http://localhost:3000", 
-    "https://6a219693-0c08-4ef4-b60e-64edf6c36ccf-00-eowbgda4dhfc.riker.replit.dev"
+    "https://6a219693-0c08-4ef4-b60e-64edf6c36ccf-00-eowbgda4dhfc.riker.replit.dev",
+    "https://incomparable-arithmetic-0211b9.netlify.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
