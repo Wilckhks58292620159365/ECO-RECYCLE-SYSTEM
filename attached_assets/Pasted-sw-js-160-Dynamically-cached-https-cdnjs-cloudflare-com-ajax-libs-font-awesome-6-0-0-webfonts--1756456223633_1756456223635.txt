@@ -1,0 +1,54 @@
+sw.js:160 🔄 Dynamically cached: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2
+sw.js:167 🔍 Network failed, trying cache: http://localhost:5000/uploads/images/1756405807576_Capture.PNG
+The FetchEvent for "<URL>" resulted in a network error response: the promise was rejected.
+The FetchEvent for "<URL>" resulted in a network error response: the promise was rejected.
+The FetchEvent for "<URL>" resulted in a network error response: the promise was rejected.
+The FetchEvent for "<URL>" resulted in a network error response: the promise was rejected.
+The FetchEvent for "<URL>" resulted in a network error response: the promise was rejected.
+The FetchEvent for "<URL>" resulted in a network error response: the promise was rejected.
+sw.js:167 🔍 Network failed, trying cache: http://localhost:5000/uploads/images/1756367791625_Capture.PNG
+:5000/uploads/images/1756405807576_Capture.PNG:1  GET http://localhost:5000/uploads/images/1756405807576_Capture.PNG net::ERR_FAILED
+sw.js:148  Uncaught (in promise) TypeError: Failed to fetch
+    at handleDynamicRequest (sw.js:148:39)
+    at sw.js:102:31
+handleDynamicRequest @ sw.js:148
+(anonymous) @ sw.js:102
+sw.js:167 🔍 Network failed, trying cache: http://localhost:5000/uploads/images/1756328335890_Capture.PNG
+sw.js:167 🔍 Network failed, trying cache: http://localhost:5000/uploads/images/1756237176842_Capture.PNG
+sw.js:167 🔍 Network failed, trying cache: http://localhost:5000/uploads/images/1756308899895_WhatsApp_Image_2025-06-28_at_19.05.46_65677c81.jpg
+:5000/uploads/images/1756367791625_Capture.PNG:1  GET http://localhost:5000/uploads/images/1756367791625_Capture.PNG net::ERR_FAILED
+sw.js:148  Uncaught (in promise) TypeError: Failed to fetch
+    at handleDynamicRequest (sw.js:148:39)
+    at sw.js:102:31
+handleDynamicRequest @ sw.js:148
+(anonymous) @ sw.js:102
+:5000/uploads/images/1756328335890_Capture.PNG:1  GET http://localhost:5000/uploads/images/1756328335890_Capture.PNG net::ERR_FAILED
+:5000/uploads/images/1756237176842_Capture.PNG:1  GET http://localhost:5000/uploads/images/1756237176842_Capture.PNG net::ERR_FAILED
+sw.js:148  Uncaught (in promise) TypeError: Failed to fetch
+    at handleDynamicRequest (sw.js:148:39)
+    at sw.js:102:31
+handleDynamicRequest @ sw.js:148
+(anonymous) @ sw.js:102
+:5000/uploads/images/1756308899895_WhatsApp_Image_2025-06-28_at_19.05.46_65677c81.jpg:1  GET http://localhost:5000/uploads/images/1756308899895_WhatsApp_Image_2025-06-28_at_19.05.46_65677c81.jpg net::ERR_FAILED
+sw.js:148  Uncaught (in promise) TypeError: Failed to fetch
+    at handleDynamicRequest (sw.js:148:39)
+    at sw.js:102:31
+handleDynamicRequest @ sw.js:148
+(anonymous) @ sw.js:102
+sw.js:148  Uncaught (in promise) TypeError: Failed to fetch
+    at handleDynamicRequest (sw.js:148:39)
+    at sw.js:102:31
+handleDynamicRequest @ sw.js:148
+(anonymous) @ sw.js:102
+sw.js:167 🔍 Network failed, trying cache: http://localhost:5000/uploads/images/1756233236429_3.PNG
+sw.js:148  Uncaught (in promise) TypeError: Failed to fetch
+    at handleDynamicRequest (sw.js:148:39)
+    at sw.js:102:31
+handleDynamicRequest @ sw.js:148
+(anonymous) @ sw.js:102
+:5000/uploads/images/1756233236429_3.PNG:1  GET http://localhost:5000/uploads/images/1756233236429_3.PNG net::ERR_FAILED
+Image
+filterPickups @ adminDashboard:1141
+loadPickupsData @ adminDashboard:1124
+showSection @ adminDashboard:831
+(anonymous) @ adminDashboard:791

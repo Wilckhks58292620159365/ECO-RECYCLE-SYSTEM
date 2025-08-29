@@ -7,7 +7,9 @@ export const wasteController = {
   async create(req: any, res: Response) {
     try {
       const { description, quantity, date, type } = req.body;
-      const BASE_URL = process.env.BASE_URL || "http://localhost:5000";
+      const BASE_URL = process.env.REPLIT_DEV_DOMAIN 
+        ? `https://${process.env.REPLIT_DEV_DOMAIN}` 
+        : (process.env.BASE_URL || "http://localhost:5000");
       const imageUrl = req.file ? `${BASE_URL}/uploads/images/${req.file.filename}` : undefined;
 
       if (!description || !quantity || !date) {
@@ -79,7 +81,9 @@ export const wasteController = {
 export const createPickup = async (req: Request, res: Response) => {
   try {
     const { wasteType, weight, description, location } = req.body;
-    const BASE_URL = process.env.BASE_URL || "http://localhost:5000";
+    const BASE_URL = process.env.REPLIT_DEV_DOMAIN 
+      ? `https://${process.env.REPLIT_DEV_DOMAIN}` 
+      : (process.env.BASE_URL || "http://localhost:5000");
 
     // احسب النقاط
     const points = calculatePoints(wasteType, Number(weight));

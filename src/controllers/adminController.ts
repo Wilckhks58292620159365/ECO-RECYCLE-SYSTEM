@@ -58,7 +58,9 @@ export const getAllPickups = async (req: Request, res: Response) => {
       order: [["createdAt", "DESC"]],
     });
 
-    const BASE_URL = process.env.BASE_URL || "http://localhost:5000";
+    const BASE_URL = process.env.REPLIT_DEV_DOMAIN 
+      ? `https://${process.env.REPLIT_DEV_DOMAIN}` 
+      : (process.env.BASE_URL || "http://localhost:5000");
 
     const data = rows.map((r) => {
       const j = r.toJSON() as any;
