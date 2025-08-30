@@ -4,9 +4,9 @@ import { calculatePoints } from "../utils/pointsCalculator";
 import User from "../models/User";
 import Pickup from "../models/Pickup";
 export const wasteController = {
-  async create(req: any, res: Response) {
+  async create(req: any, res: any) {
     try {
-      const { description, quantity, date, type } = req.body;
+      const { description, quantity, date, type }:any = req.body;
       const BASE_URL = process.env.REPLIT_DEV_DOMAIN 
         ? `https://${process.env.REPLIT_DEV_DOMAIN}` 
         : (process.env.BASE_URL || "http://localhost:5000");
@@ -32,7 +32,7 @@ export const wasteController = {
     }
   },
 
-  async myPickups(req: any, res: Response) {
+  async myPickups(req: any, res: any) {
     try {
       const pickups = await wasteService.findAllByUser(req.user.id);
       res.json(pickups);
@@ -42,7 +42,7 @@ export const wasteController = {
     }
   },
 
-  async allPickups(req: Request, res: Response) {
+  async allPickups(req: any, res: any) {
     try {
       const pickups = await wasteService.findAll();
       res.json(pickups);
@@ -52,7 +52,7 @@ export const wasteController = {
     }
   },
 
-  async confirm(req: Request, res: Response) {
+  async confirm(req: any, res: any) {
       try {
     const { pickupId } = req.body;
     const pickup = await Pickup.findByPk(pickupId);
@@ -78,7 +78,7 @@ export const wasteController = {
   }
 };
 
-export const createPickup = async (req: Request, res: Response) => {
+export const createPickup = async (req: any, res: any) => {
   try {
     const { wasteType, weight, description, location } = req.body;
     const BASE_URL = process.env.REPLIT_DEV_DOMAIN 
