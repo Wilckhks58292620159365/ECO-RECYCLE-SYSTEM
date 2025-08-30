@@ -1,21 +1,47 @@
-import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
-import User  from './User';
+// backend/src/models/Waste.ts
+import { DataTypes, Model, Optional } from "sequelize";
+import sequelize from "../config/database";
+import User from "./User";
 
-@Table({ tableName: 'wastes', timestamps: true })
-export class Waste extends Model {
-  @Column({ type: DataType.UUID, defaultValue: DataType.UUIDV4, primaryKey: true })
-  id!: string;
-
-  @Column({ type: DataType.STRING, allowNull: false })
-  type!: string;
-
-  @Column({ type: DataType.FLOAT, allowNull: false })
-  weight!: number;
-
-  @ForeignKey(() => User)
-  @Column({ type: DataType.UUID, allowNull: false })
-  userId!: string;
-
-  @BelongsTo(() => User)
-  user!: User;
+export interface WasteAttributes {
+  id: string;
+  type: string;
+  weight: number;
+  userId: number;
 }
+
+export interface WasteCreationAttributes extends Optional<WasteAttributes, "id"> {}
+
+class Waste extends Model<WasteAttributes, WasteCreationAttributes> implements WasteAttributes {
+  public id!: string;
+  public type!: string;
+  public weight!: number;
+  public userId!: number;
+}
+
+Waste.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+    },
+    type: { type: DataTypes.STRING, allowNull: false },
+    weight: { type: DataTypes.FLOAT, allowNull: false },
+    userId: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    tableName: "Wastes",
+    modelName: "Waste",
+  }
+);
+
+// العلاقات
+Waste.belongsTo(User, { foreignKey: "userId", as: "user" });
+User.hasMany(Waste, { foreignKey: "userId", as: "wastes" });
+
+export default Waste;
