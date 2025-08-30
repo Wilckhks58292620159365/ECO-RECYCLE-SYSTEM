@@ -4,7 +4,7 @@ import sequelize from "../config/database";
 import bcrypt from "bcryptjs";
 
 export interface UserAttributes {
-  id: number;
+  id?: number;
   firstName?: string;
   lastName?: string;
   email: string;
