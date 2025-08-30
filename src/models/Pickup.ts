@@ -32,8 +32,8 @@ class Pickup
   public userId!: number;
   public description!: string;
   public wasteType?:string;
-  public quantity?: number;
-  public date?: string;
+  public quantity!: number;
+  public date!: string;
   public type!: string;
   public image!: string | null;
   public location?:string;
