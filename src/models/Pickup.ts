@@ -31,7 +31,7 @@ class Pickup
   public date!: string;
   public type!: string;
   public image!: string | null;
-  public status!: "pending" | "confirmed";
+  public status!: "pending" | "confirmed" | "rejected";
   public points!: number;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
