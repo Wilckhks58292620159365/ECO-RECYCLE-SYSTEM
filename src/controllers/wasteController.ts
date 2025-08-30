@@ -80,7 +80,7 @@ export const wasteController = {
 
 export const createPickup = async (req: any, res: any) => {
   try {
-    const { wasteType, weight, description, location } = req.body;
+    const { wasteType, weight, description, location }:any = req.body;
     const BASE_URL = process.env.REPLIT_DEV_DOMAIN 
       ? `https://${process.env.REPLIT_DEV_DOMAIN}` 
       : (process.env.BASE_URL || "http://localhost:5000");
@@ -89,7 +89,7 @@ export const createPickup = async (req: any, res: any) => {
     const points = calculatePoints(wasteType, Number(weight));
 
     const pickup = await Pickup.create({
-      type, //wasteType
+      wasteType,
       weight,
       description,
       location,
