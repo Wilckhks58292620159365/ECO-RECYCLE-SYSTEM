@@ -9,6 +9,7 @@ interface PickupAttributes {
   date: string; // ISO string
   type: string; // نوع المخلفات (مثلاً "بلاستيك")
   image: string | null;
+    wasteType?: string; 
   status: "pending" | "confirmed" | "rejected";
   points: number;
   createdAt?: Date;
@@ -27,6 +28,7 @@ class Pickup
   public id!: number;
   public userId!: number;
   public description!: string;
+  public wasteType?:string;
   public quantity!: number;
   public date!: string;
   public type!: string;
@@ -48,6 +50,8 @@ Pickup.init(
     image: { type: DataTypes.STRING, allowNull: true },
     status: { type: DataTypes.ENUM("pending", "confirmed"), defaultValue: "pending" },
     points: { type: DataTypes.INTEGER.UNSIGNED, allowNull: false, defaultValue: 0 }, // جديد
+    wasteType: { type: DataTypes.STRING, allowNull: true },
+    
   },
   {
     sequelize,
