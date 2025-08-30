@@ -20,7 +20,7 @@ export const wasteController = {
         userId: req.user.id, // جاي من الـ authMiddleware
         description,
         quantity: Number(quantity),
-        date: new Date(date),
+        date: new Date(date).toISOString(),
         imageUrl,
         type,
       });
