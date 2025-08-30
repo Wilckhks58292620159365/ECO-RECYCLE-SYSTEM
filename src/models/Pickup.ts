@@ -6,7 +6,7 @@ interface PickupAttributes {
   userId: number;
   description: string;
   quantity?: number;
-  date: string; // ISO string
+  date?: string; // ISO string
   type: string; // نوع المخلفات (مثلاً "بلاستيك")
   image: string | null;
     wasteType?: string; 
@@ -33,7 +33,7 @@ class Pickup
   public description!: string;
   public wasteType?:string;
   public quantity?: number;
-  public date!: string;
+  public date?: string;
   public type!: string;
   public image!: string | null;
   public location?:string;
