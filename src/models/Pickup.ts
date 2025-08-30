@@ -7,7 +7,7 @@ interface PickupAttributes {
   description: string;
   quantity?: number;
   date?: string; // ISO string
-  type: string; // نوع المخلفات (مثلاً "بلاستيك")
+  type?: string; // نوع المخلفات (مثلاً "بلاستيك")
   image: string | null;
     wasteType?: string; 
   weight?:string;
