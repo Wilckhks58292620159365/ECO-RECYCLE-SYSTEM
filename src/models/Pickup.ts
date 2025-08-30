@@ -59,6 +59,7 @@ Pickup.init(
     wasteType: { type: DataTypes.STRING, allowNull: true },
     weight: { type: DataTypes.STRING, allowNull: true },
     location: { type: DataTypes.STRING, allowNull: true },
+    imageUrl: { type: DataTypes.STRING, allowNull: true },
     
   },
   {
