@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import { sequelize } from "../config/database";
-import { user } from "../models/User";
+import User from "../models/User";
 
 async function seedAdmins() {
   try {
