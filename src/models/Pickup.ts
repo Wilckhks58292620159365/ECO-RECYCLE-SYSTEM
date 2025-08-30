@@ -12,6 +12,7 @@ interface PickupAttributes {
     wasteType?: string; 
   weight?:string;
   location?:string;
+  imageUrl?:string;
   status: "pending" | "confirmed" | "rejected";
   points: number;
   createdAt?: Date;
@@ -36,6 +37,7 @@ class Pickup
   public type!: string;
   public image!: string | null;
   public location?:string;
+  public imageUrl?:string;
   public weight?:string;
   public status!: "pending" | "confirmed" | "rejected";
   public points!: number;
