@@ -22,10 +22,10 @@ async function seedAdmins() {
     ];
 
     for (const adminData of admins) {
-      const existing = await User.findOne({ where: { email: adminData.email } });
+      const existing = await user.findOne({ where: { email: adminData.email } });
       if (!existing) {
         const hashedPassword = await bcrypt.hash(adminData.password, 10);
-        await User.create({
+        await user.create({
           ...adminData,
           password: hashedPassword,
         });
