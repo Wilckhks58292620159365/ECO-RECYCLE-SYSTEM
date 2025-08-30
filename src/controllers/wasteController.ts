@@ -88,7 +88,7 @@ export const createPickup = async (req: any, res: any) => {
     // احسب النقاط
     const points = calculatePoints(wasteType, Number(weight));
 
-    const pickup = await Pickup.create({
+    const pickup:any = await Pickup.create({
       wasteType,
       weight,
       description,
