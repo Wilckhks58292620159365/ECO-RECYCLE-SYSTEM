@@ -8,7 +8,6 @@ async function seedAdmins() {
 
     const admins = [
       {
-        id:1,
           firstName: "Admin",
         lastName: "One",
         email: "admin1@example.com",
@@ -16,8 +15,6 @@ async function seedAdmins() {
         role: "admin",
       },
       {
-        id:2,
-        
           firstName: "Admin",
         lastName: "Two",
         email: "admin2@example.com",
