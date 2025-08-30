@@ -3,7 +3,7 @@ import User from "../models/User";
 import Pickup from "../models/Pickup";
 import { calculatePoints } from "../utils/pointsCalculator";
 // Get all users
-export const getAllUsers = async (req, res) => {
+export const getAllUsers = async (req:any, res:any) => {
   try {
     const users = await User.findAll({
       attributes: ["id", "firstName", "lastName", "email", "points", "active", "role"],
