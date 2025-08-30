@@ -8,20 +8,27 @@ async function seedAdmins() {
 
     const admins = [
       {
+        id:1,
           firstName: "Admin",
         lastName: "One",
         name: "Admin One",
         email: "admin1@example.com",
         password: "Ab123456", // تقدر تغير الباسورد
         role: "admin",
+        createdAt: new Date(),
+  updatedAt: new Date()
       },
       {
+        id:2,
+        
           firstName: "Admin",
         lastName: "Two",
         name: "Admin Two",
         email: "admin2@example.com",
         password: "Ab123456",
         role: "admin",
+         createdAt: new Date(),
+  updatedAt: new Date()
       },
     ];
 
