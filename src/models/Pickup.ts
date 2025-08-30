@@ -11,6 +11,7 @@ interface PickupAttributes {
   image: string | null;
     wasteType?: string; 
   weight?:string;
+  location?:string;
   status: "pending" | "confirmed" | "rejected";
   points: number;
   createdAt?: Date;
@@ -34,6 +35,7 @@ class Pickup
   public date!: string;
   public type!: string;
   public image!: string | null;
+  public location?:string;
   public weight?:string;
   public status!: "pending" | "confirmed" | "rejected";
   public points!: number;
@@ -54,6 +56,7 @@ Pickup.init(
     points: { type: DataTypes.INTEGER.UNSIGNED, allowNull: false, defaultValue: 0 }, // جديد
     wasteType: { type: DataTypes.STRING, allowNull: true },
     weight: { type: DataTypes.STRING, allowNull: true },
+    location: { type: DataTypes.STRING, allowNull: true },
     
   },
   {
