@@ -10,8 +10,8 @@ export interface UserAttributes {
   email: string;
   password: string;
   role: "user" | "admin";
-  points: number;
-  active: boolean;
+  points?: number;
+  active?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
