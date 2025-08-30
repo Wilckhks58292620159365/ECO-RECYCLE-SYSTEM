@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
-import { User } from './User';
+import User  from './User';
 
 @Table({ tableName: 'wastes', timestamps: true })
 export class Waste extends Model {
