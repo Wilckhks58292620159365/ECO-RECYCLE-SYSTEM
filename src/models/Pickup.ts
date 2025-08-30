@@ -10,7 +10,7 @@ interface PickupAttributes {
   type: string; // نوع المخلفات (مثلاً "بلاستيك")
   image: string | null;
     wasteType?: string; 
-  weight:string;
+  weight?:string;
   status: "pending" | "confirmed" | "rejected";
   points: number;
   createdAt?: Date;
