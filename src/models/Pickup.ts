@@ -9,7 +9,7 @@ interface PickupAttributes {
   date: string; // ISO string
   type: string; // نوع المخلفات (مثلاً "بلاستيك")
   image: string | null;
-  status: "pending" | "confirmed";
+  status: "pending" | "confirmed" | "rejected";
   points: number;
   createdAt?: Date;
   updatedAt?: Date;
@@ -31,7 +31,7 @@ class Pickup
   public date!: string;
   public type!: string;
   public image!: string | null;
-  public status!: "rejected" | "confirmed";
+  public status!: "pending" | "confirmed" | "rejected";
   public points!: number;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
