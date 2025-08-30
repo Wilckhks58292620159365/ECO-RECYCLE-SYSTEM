@@ -6,16 +6,16 @@ async function seedAdmins() {
   try {
     await sequelize.sync();
 
-    const admins = [
+    const admins:any = [
       {
-          firstName: "Admin",
+        firstName: "Admin",
         lastName: "One",
         email: "admin1@example.com",
         password: "Ab123456", // تقدر تغير الباسورد
         role: "admin",
       },
       {
-          firstName: "Admin",
+        firstName: "Admin",
         lastName: "Two",
         email: "admin2@example.com",
         password: "Ab123456",
