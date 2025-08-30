@@ -16,7 +16,7 @@ export const wasteController = {
         return res.status(400).json({ error: "Missing required fields" });
       }
 
-      const pickup = await wasteService.create({
+      const pickup:any = await wasteService.create({
         userId: req.user.id, // جاي من الـ authMiddleware
         description,
         quantity: Number(quantity),
