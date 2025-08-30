@@ -10,6 +10,7 @@ interface PickupAttributes {
   type: string; // نوع المخلفات (مثلاً "بلاستيك")
   image: string | null;
     wasteType?: string; 
+  weight:string;
   status: "pending" | "confirmed" | "rejected";
   points: number;
   createdAt?: Date;
@@ -33,6 +34,7 @@ class Pickup
   public date!: string;
   public type!: string;
   public image!: string | null;
+  public weight?:string;
   public status!: "pending" | "confirmed" | "rejected";
   public points!: number;
   public readonly createdAt!: Date;
@@ -51,6 +53,7 @@ Pickup.init(
     status: { type: DataTypes.ENUM("pending", "confirmed"), defaultValue: "pending" },
     points: { type: DataTypes.INTEGER.UNSIGNED, allowNull: false, defaultValue: 0 }, // جديد
     wasteType: { type: DataTypes.STRING, allowNull: true },
+    weight: { type: DataTypes.STRING, allowNull: true },
     
   },
   {
