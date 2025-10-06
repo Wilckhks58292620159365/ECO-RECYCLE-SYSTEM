@@ -33,10 +33,11 @@ app.use(cors({
     "https://6a219693-0c08-4ef4-b60e-64edf6c36ccf-00-eowbgda4dhfc.riker.replit.dev",
     "https://incomparable-arithmetic-0211b9.netlify.app"
   ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+app.options("*", cors());
 app.use(express.json());
 // Serve static files with proper headers for frontend access
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads"), {
