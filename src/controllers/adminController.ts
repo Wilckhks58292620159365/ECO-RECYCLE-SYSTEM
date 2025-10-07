@@ -69,7 +69,7 @@ export const getAllPickups = async (req: Request, res: Response) => {
       return {
         ...j,
         createdAt,
-        image: j.image, // ✅ بس اسم الملف
+        imageUrl: j.image ? `/uploads/images/${j.image}` : null, // ✅ بس relative path
       };
     });
 
