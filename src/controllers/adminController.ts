@@ -51,21 +51,16 @@ export const getAllPickups = async (req: Request, res: Response) => {
       include: [
         {
           model: User,
-          as: "user", // ← لازم يكون نفس alias اللي في associations.ts
+          as: "user",
           attributes: ["id", "firstName", "lastName", "email"]
         }
       ],
       order: [["createdAt", "DESC"]],
     });
 
-    const BASE_URL = process.env.REPLIT_DEV_DOMAIN 
-      ? `https://${process.env.REPLIT_DEV_DOMAIN}` 
-      : (process.env.BASE_URL || "http://localhost:5000");
-
     const data = rows.map((r) => {
       const j = r.toJSON() as any;
 
-      // fix createdAt fallback
       let createdAt: string | null = j.createdAt ?? null;
       if (!createdAt && j.pickupDate) {
         createdAt = `${j.pickupDate}T00:00:00.000Z`;
@@ -74,7 +69,7 @@ export const getAllPickups = async (req: Request, res: Response) => {
       return {
         ...j,
         createdAt,
-        imageUrl: j.image ? `${BASE_URL}/uploads/images/${j.image}` : null,
+        image: j.image, // ✅ بس اسم الملف
       };
     });
 
